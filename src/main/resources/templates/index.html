@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Rewards Program</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/rewards-program.css}" rel="stylesheet" />
+</head>
+<body class="container body-content">
+
+<h1>Reward Points</h1>
+
+<h2>Customer History</h2>
+
+<table class="table table-bordered customer-listing">
+    <thead>
+    <tr th:if="${customers}" class="table-view table-head">
+        <th class="history-width">Customer</th>
+        <th class="history-width">Total</th>
+        <th class="history-width">Points</th>
+        <th>Purchase Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}" class="table-view">
+        <td th:text="${customer.name}" class="vertical"></td>
+        <td>
+            <ul th:each="purchase : ${customer.purchases}">
+                <li th:text="${purchase.total}" class="table-list"></li>
+            </ul>
+        </td>
+        <td>
+            <ul th:each="purchase : ${customer.purchases}">
+                <li th:text="${purchase.points}" class="table-list"></li>
+            </ul>
+        </td>
+        <td>
+            <ul th:each="purchase : ${customer.purchases}">
+                <li th:text="${purchase.purchaseDate}" class="table-list"></li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Customer Totals</h2>
+
+<table class="table table-bordered customer-listing">
+    <thead>
+    <tr th:if="${customers}" class="table-view table-head">
+        <th class="totals-width">Customer</th>
+        <th class="totals-width">Purchases</th>
+        <th>Total Reward Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${customers}" class="table-view">
+        <td th:text="${customer.name}" class="totals-width"></td>
+        <td th:text="${customer.totalPurchases}" class="totals-width"></td>
+        <td th:text="${customer.rewardPoints}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

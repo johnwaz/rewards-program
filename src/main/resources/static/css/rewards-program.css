@@ -1,0 +1,68 @@
+.body-content {
+    margin-top: 72px;
+}
+
+td, th {
+    padding: 10px;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    vertical-align: middle !important;
+}
+
+tr:nth-child(odd) {
+    background-color: #e4e4e4;
+}
+
+.centeredTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.customer-listing {
+    margin: 30px auto;
+    border: 1px solid #e4e4e4;
+    width: 80%;
+}
+
+table.customer-listing td:first-child {
+    font-weight: bold;
+}
+
+table.customer-listing td:last-child {
+    width: 80%;
+}
+
+.table-view {
+    text-align: center;
+}
+
+.table-list {
+    margin-right: 40px;
+    list-style-type: none;
+}
+
+.table-head {
+    color: white !important;
+    background: black !important;
+}
+
+label {
+    margin-right: 15px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.history-width {
+    width: 25%;
+}
+
+.totals-width {
+    width: 33%;
+}
